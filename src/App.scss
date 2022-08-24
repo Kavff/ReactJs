@@ -1,8 +1,16 @@
 
-.divCards{
-
+.divMain{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
-    margin:40px;
+    align-items: center;
+    justify-content: center;
+    .divCards{
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin:40px;
+    }
+    
 }
