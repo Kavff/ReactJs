@@ -1,19 +1,16 @@
 
-export const ContainerTitle = (props) => {
+export const ContainerTitle = ({title = "THE NORTH WATCH"}) => {
 
+/* const {title} = props; */
 
 return (
 
-
-
     <div>
         <h1>
-            {props.title}
+            {title}
         </h1>
         <hr></hr>
     </div>
-
-
 )
 }
 
