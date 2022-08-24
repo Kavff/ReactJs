@@ -16,7 +16,6 @@ function App() {
       <div className="divMain">
         <ContainerTitle title="Our Most Popular Models"></ContainerTitle>
         <div className="divCards">
-
           <ItemListContainer
             img={MasterRolexS}
             alt="Rolex"
@@ -53,7 +52,6 @@ function App() {
              Stainless steel oyster bracelet with fold over clasp."
             price="C$16,833"
           ></ItemListContainer>
-
         </div>
       </div>
     </ThemeProvider>
