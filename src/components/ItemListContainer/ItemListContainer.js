@@ -12,7 +12,7 @@ export function ItemListContainer({img,alt,productTitle,description,price}) {
 
   return (
     <div>
-      <Card sx={{ maxWidth: 345 }}>
+      <Card sx={{ maxWidth: 345, margin: 5}}>
         <div className="imgCards">
           <img src={img} alt={alt}></img>
         </div>
