@@ -8,7 +8,7 @@ import Box from "@mui/material/Box";
 import Logo from "../../assets/logo_small.png";
 import CartWidget from "../CartWidget/CartWidget";
 
-export function Header() {
+const Header = () => {
   return (
     <div>
       <Box sx={{ flexGrow: 1 }}>
@@ -39,3 +39,5 @@ export function Header() {
 }
 
 export default Header;
+
+
