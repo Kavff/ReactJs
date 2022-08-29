@@ -16,8 +16,9 @@ function App() {
       <Header/>
       <div className="divMain">
         <ContainerTitle title="Our Most Popular Models"></ContainerTitle>
-        <ItemCount stock={10} initial={1}></ItemCount>
-        <ItemCount stock={0} initial={0} ></ItemCount>
+        <ItemCount product={"Rolex Gold"} stock={10} initial={1}></ItemCount>
+
+        <ItemCount product={"Rolex Black"} stock={0} initial={0} ></ItemCount>
 
       </div>
     </ThemeProvider>
