@@ -1,12 +1,13 @@
 
-import stock from "../DB/Db";
+import products from "../DB/Db";
 
 const dataRequest = () => {
     return new Promise((resolve,reject) => {
 
       setTimeout(() => {
-        resolve(stock);
+        resolve(products);
       },2000)
       } )
   }
 
+export default dataRequest

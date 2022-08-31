@@ -1,36 +1,29 @@
-import * as React from "react";
+import { useEffect, useState } from "react";
+import "./ItemsListContainer.scss";
+import ItemList from "../ItemList/ItemList";
+import dataRequest from "../../helpers/dataRequest";
 
-/* import CardMedia from "@mui/material/CardMedia";
- */
-/* import MasterRolexS from "../../assets/rolexMasterS-Square280.webp";
- */import "./ItemsListContainer.scss";
+const ItemListContainer = () => {
+  // Here in the container i use THE logic for my request from my API.
 
- 
-export function ItemListContainer() {
+  const [products, setProducts] = useState([]);
 
- // Here on the container i use THE logic for my request from my API.
-  
-
-  dataRequest()
-  .then ((res) => {
-
-    console.log(res)
-  })
-  .catch((error) => {
-
-    console.log(error)
-  })
-.finally(() => {
-  console.log("End")
-})
+  /*   const [loading, setLoading] = useState(true);
+   */
+  useEffect(() => {
+    dataRequest()
+      .then((res) => {
+        setProducts(res);
+        /*         setLoading(false);
+         */
+      })
+      .catch((error) => console.log(error));
+  }, []);
 
   return (
     <div>
-          <h2>Products</h2>
-        <hr/>
-      
+      <ItemList products={products}/>
     </div>
   );
-}
-
+};
 export default ItemListContainer;
