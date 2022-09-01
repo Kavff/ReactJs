@@ -1,6 +1,6 @@
 import MasterRolexPepsi from "../assets/rolexMasterPepsi-Square280.webp";
-import MasterRolexBatman from "../src/assets/rolexMasterBatman-Square280.webp";
-import MasterRolexCoke from "../src/assets/Coke-Square280.webp";
+import MasterRolexBatman from "../assets/rolexMasterBatman-Square280.webp";
+import MasterRolexCoke from "../assets/Coke-Square280.webp";
 import MasterGold from "../assets/Gold.webp";
 import MasterGMTII from "../assets/ROlex GMT-Master II-Square280.webp";
 
