@@ -4,7 +4,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import theme from "./themeConfig";
 import ContainerTitle from "./components/ContainerTitle/ContainerTitle";
 import "./App.scss";
-import ItemList from "./components/ItemList/ItemList";
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 
 
 
@@ -14,7 +14,7 @@ function App() {
       <Header/>
       <div className="divMain">
         <ContainerTitle title="Our Most Popular Models"></ContainerTitle>
-       <ItemList/>
+       <ItemListContainer/>
       </div>
     </ThemeProvider>
   );
