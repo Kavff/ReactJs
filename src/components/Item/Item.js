@@ -6,6 +6,7 @@ import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 
+
 const Item = ({ product }) => {
   return (
     <div>
@@ -17,11 +18,13 @@ const Item = ({ product }) => {
           <Typography gutterBottom variant="h5" component="div">
             {product.name}
           </Typography>
+          <hr/>
           <Typography variant="body2" color="text.secondary">
             {product.desc}
           </Typography>
+          <hr/>
           <Typography variant="h5" color="text.secondary">
-            {product.price}
+            ${product.price}
           </Typography>
         </CardContent>
         <CardActions>
