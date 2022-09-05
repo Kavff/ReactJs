@@ -8,8 +8,6 @@ import CircularProgress from "@mui/material/CircularProgress";
 import { useParams } from "react-router-dom";
 
 
-
-
 const ItemListContainer = () => {
   // Here in the container i use THE logic for my request from my API.
 
