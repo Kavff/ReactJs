@@ -3,12 +3,9 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import dataRequest from "../../helpers/dataRequest";
 import ItemDetails from "../itemDetails/ItemDetails";
-import Stack from "@mui/material/Stack";
-import CircularProgress from "@mui/material/CircularProgress";
-
-
+import Loader from "../Loader/Loader";
 const ItemDetailContainer = () => {
-  const [item, setItem] = useState(null);
+  const [products, setProducts] = useState([]);
   const { itemId } = useParams();
   const [loading, setLoading] = useState(true);
 
@@ -17,28 +14,22 @@ const ItemDetailContainer = () => {
 
     dataRequest()
       .then((res) => {
-        setItem(res.find((prod) => prod.id === Number(itemId)));
+        setProducts(res.find((prod) => prod.id === Number(itemId)));
       })
       .catch((err) => console.log(err))
       .finally(() => {
         setLoading(false);
       });
-  });
-
+  }, [itemId]);
+  console.log(products);
   return (
     <>
       {loading ? (
         <div className="Spinner">
-          <Stack sx={{ color: "grey.500" }} spacing={5} direction="row">
-            <CircularProgress color="secondary" />
-            <CircularProgress color="secondary" />
-            <CircularProgress color="secondary" />
-          </Stack>
+          <Loader />
         </div>
       ) : (
-        <div>
-          <ItemDetails item={item}/>
-        </div>
+        <ItemDetails products={products} />
       )}
     </>
   );

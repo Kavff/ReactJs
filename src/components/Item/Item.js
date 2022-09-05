@@ -25,11 +25,15 @@ const Item = ({ product }) => {
           </Typography>
           <hr />
         </CardContent>
-        <CardActions>
+        <div>
+          <CardActions>
+            <div>
             <Button onClick={handNavigation} size="large">
               Learn More
             </Button>
-        </CardActions>
+            </div>
+          </CardActions>
+        </div>
       </Card>
     </div>
   );

@@ -1,40 +1,35 @@
-
-import React from 'react'
-import Button from "@mui/material/Button";
+import React from "react";
 import Typography from "@mui/material/Typography";
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
+import ItemCount from "../ItemCount/ItemCount";
 
-const ItemDetails = ({item}) => {
-
-    return (
-
+const ItemDetails = ({ products }) => {
+  return (
     <div>
-      <Card sx={{ maxWidth: 345, margin: 5}}>
+      <Card sx={{ maxWidth: 345, margin: 5 }}>
         <div className="imgCards">
-          <img src={item.img} alt={item.name}></img>
+          <img src={products.img} alt={products.name}></img>
         </div>
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            {item.name}
+            {products.name}
           </Typography>
-          <hr/>
+          <hr />
           <Typography variant="body2" color="text.secondary">
-            {item.desc}
+            {products.desc}
           </Typography>
-          <hr/>
+          <hr />
+          <Typography variant="h5" color="primary">
+            ${products.price}
+          </Typography>
           <Typography variant="h5" color="text.secondary">
-            ${item.price}
+          <div><ItemCount initial={products.stock > 1 ? 1 : 0} stock={products.stock}/></div>
           </Typography>
         </CardContent>
-        <CardActions>
-          <Button size="small">Add Cart</Button>
-        </CardActions>
       </Card>
-      
     </div>
-  )
-}
+  );
+};
 
-export default ItemDetails
+export default ItemDetails;

@@ -19,7 +19,6 @@ function App() {
           <Route path= "/" element={<ItemListContainer />} />
           <Route path= "/item/:itemId" element={<ItemDetailContainer />} />
           <Route path='/categories/:categoryId' element={<ItemListContainer />}></Route>
-          
           <Route path ="/LoginOrRegister" element= {<LoginOrRegister/>}/>
           <Route path= "*" element= {<Navigate to="/" />}/>
 

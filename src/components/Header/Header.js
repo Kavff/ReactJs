@@ -28,13 +28,11 @@ const Header = () => {
               </div>
             </Typography>
 
-            <SearchBox/>
-
-            
+            <SearchBox />
+            <CartWidget fontSize={"large"}/>
             <Link to="/LoginOrRegister" className="links">
               Login or Register
             </Link>
-
           </Toolbar>
         </AppBar>
       </Box>

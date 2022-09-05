@@ -3,9 +3,8 @@ import "./ItemsListContainer.scss";
 import ItemList from "../ItemList/ItemList";
 import dataRequest from "../../helpers/dataRequest";
 import ContainerTitle from "../ContainerTitle/ContainerTitle";
-import Stack from "@mui/material/Stack";
-import CircularProgress from "@mui/material/CircularProgress";
 import { useParams } from "react-router-dom";
+import Loader from "../Loader/Loader";
 
 
 const ItemListContainer = () => {
@@ -37,11 +36,7 @@ const ItemListContainer = () => {
     <>
       {loading ? (
         <div className="Spinner">
-          <Stack sx={{ color: "grey.500" }} spacing={5} direction="row">
-            <CircularProgress color="secondary" />
-            <CircularProgress color="secondary" />
-            <CircularProgress color="secondary" />
-          </Stack>
+         <Loader/>
         </div>
       ) : (
         <div className="containerList">
@@ -52,5 +47,6 @@ const ItemListContainer = () => {
     </>
   );
 };
+
 
 export default ItemListContainer;
