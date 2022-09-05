@@ -5,7 +5,7 @@ const dataRequest = () => {
     return new Promise((resolve,reject) => {
 
       setTimeout(() => {
-        resolve(products);
+        resolve(products)
       },2000)
       } )
   }

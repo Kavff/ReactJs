@@ -9,6 +9,17 @@
         
     }
 
+    .containerList{
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 
 
+    .Spinner{
 
+        margin-left: 800px;
+        margin-top: 200px;
+    }
