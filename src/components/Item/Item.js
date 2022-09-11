@@ -5,6 +5,9 @@ import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import { useNavigate } from "react-router-dom";
+import "./Items.scss";
+import theme from "../../themeConfig"
+import { ThemeProvider } from "@mui/material/styles";
 
 const Item = ({ product }) => {
   let navigate = useNavigate();
@@ -15,26 +18,33 @@ const Item = ({ product }) => {
 
   return (
     <div>
-      <Card sx={{ maxWidth: 345, margin: 5 }}>
-        <div className="imgCards">
-          <img src={product.img} alt={product.name}></img>
-        </div>
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            {product.name}
-          </Typography>
+      <ThemeProvider theme={theme}>
+        <Card className="cardMain" sx={{ width: 350, margin: 5 }}>
+          <div className="cardImg">
+            <img src={product.img} alt={product.name}></img>
+          </div>
           <hr />
-        </CardContent>
-        <div>
-          <CardActions>
-            <div>
-            <Button onClick={handNavigation} size="large">
-              Learn More
-            </Button>
-            </div>
-          </CardActions>
-        </div>
-      </Card>
+          <CardContent>
+            <Typography className="cardName" gutterBottom variant="h5" component="div">
+              {product.name}
+            </Typography>
+            <hr />
+          </CardContent>
+          <div>
+            <CardActions>
+              <div>
+                <Button
+                  className="cardButton"
+                  onClick={handNavigation}
+                  size="large"
+                >
+                  Learn More
+                </Button>
+              </div>
+            </CardActions>
+          </div>
+        </Card>
+      </ThemeProvider>
     </div>
   );
 };

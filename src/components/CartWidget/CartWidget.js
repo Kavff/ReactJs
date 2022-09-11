@@ -8,6 +8,7 @@ export function CartWidget() {
        <div>
         <IconButton>
           <ShoppingCartIcon color="secondary"></ShoppingCartIcon>
+          <span>0</span>
         </IconButton>
 
         

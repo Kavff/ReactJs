@@ -1,7 +1,7 @@
 const products = [
   {
     id: 1,
-    name: "Rolex GMT Master II Black Red Coke Bezel Steel Mens Watch",
+    name: "Rolex GMT Master II Black Red Coke",
     price: 21150,
     img: "../assets/Coke-Square280.webp",
     stock: 5,
@@ -13,7 +13,7 @@ const products = [
   },
   {
     id: 2,
-    name: "Rolex GMT-Master II Yellow Gold Automatic Green Dial Mens Watch",
+    name: "Rolex GMT-Master II Yellow Gold ",
     price: 79700,
     img: "../assets/Gold-Square280.webp",
     stock: 3,
@@ -25,7 +25,7 @@ const products = [
   },
   {
     id: 3,
-    name: "Rolex GMT-Master II 116710B Batman Mens Watch",
+    name: "Rolex GMT-Master II 116710B Batman",
     price: 26000,
     img: "../assets/rolexMasterBatman-Square280.webp",
     stock: 3,
@@ -37,7 +37,7 @@ const products = [
   },
   {
     id: 4,
-    name: "GMT-Master II black bezel",
+    name: "GMT-Master II black bezel  Mens Watch",
     price: 21300,
     img: "../assets/ROlex GMT-Master II-Square280.webp",
     stock: 4,
@@ -72,7 +72,7 @@ const products = [
     name: "Hamilton Jazzmaster Face 2 Face II Silver",
     price: 4600,
     img: "../assets/Hamilton-Jazzmaster-Square280.webp",
-    stock: 15,
+    stock: 0,
     desc: `Brand: Hamilton
     Movement: Mechanical Automatic
     Model: Face 2 Face II

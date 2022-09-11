@@ -1,7 +1,25 @@
 
 
-.numberCounter{
 
-    margin:10px;
+
+.counterContainer{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .counterButtonAddSub{
+        display: flex;
+        flex-direction: row;
+    }
+    .counterNumber{  
+        margin:10px;
+    }
+    
+    .counterHr{
+        width: 100%;
+    }
 
 }
+

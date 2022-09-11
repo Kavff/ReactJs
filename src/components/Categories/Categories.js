@@ -7,14 +7,14 @@ const Categories = () => {
   return (
     <div className="categoriesButton">
       <div>
-        <Link to="/Categories/Rolex" variant="outlined" color="secondary">
+        <Link className="cardLink" to="/Categories/Rolex" variant="outlined" color="secondary">
           <Button variant="contained" color="secondary">
             ROLEX
           </Button>
         </Link>
       </div>
       <div>
-        <Link to="Categories/Hamilton" variant="outlined" color="secondary">
+        <Link className="cardLink" to="Categories/Hamilton" variant="outlined" color="secondary">
           <Button variant="outlined" color="primary">
             HAMILTON
           </Button>
