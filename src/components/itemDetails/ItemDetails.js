@@ -26,6 +26,7 @@ const ItemDetails = ({ products }) => {
     };
 
     addToCart(itemToCart);
+    
   };
 
   return (
