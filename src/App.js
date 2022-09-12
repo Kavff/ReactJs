@@ -8,33 +8,14 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import LoginOrRegister from "./components/LoginOrRegister/LoginOrRegister";
 import Categories from "./components/Categories/Categories";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
-import CartContext from "./context/CartContext";
-import { useState } from 'react';
+import { CartProvider } from "./context/CartContext";
 import Cart from "./components/Cart/Cart";
 
 function App() {
 
-  const [cart,setCart] = useState([])
-
-  const addToCart = (product) => {
-    setCart([...cart,product])
-  }
-
-  const isInCart = (id) => {
-    return  cart.some((product) => product.id === id)
-  }
-
-  const cartQuantity = () => {
-      return cart.reduce((acc,product) => acc + product.quantity,0)
-  }
 
   return (
-    <CartContext.Provider value={{
-      cart,
-      addToCart,
-      isInCart,
-      cartQuantity
-    }}>
+    <CartProvider>
       <BrowserRouter>
         <ThemeProvider theme={theme}>
           <Header />
@@ -52,7 +33,7 @@ function App() {
           </Routes>
         </ThemeProvider>
       </BrowserRouter>
-    </CartContext.Provider>
+    </CartProvider>
   );
 }
 

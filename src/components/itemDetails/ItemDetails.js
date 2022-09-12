@@ -5,12 +5,12 @@ import CardContent from "@mui/material/CardContent";
 import ItemCount from "../ItemCount/ItemCount";
 import "./itemDetails.scss";
 import { useState, useContext } from "react";
-import cartContext from "../../context/CartContext";
+import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 
 const ItemDetails = ({ products }) => {
-  const { cart, addToCart, isInCart } = useContext(cartContext);
+  const { cart, addToCart, isInCart } = useContext(CartContext);
   console.log(cart);
 
   const [counter, setCounter] = useState(1);
@@ -26,7 +26,6 @@ const ItemDetails = ({ products }) => {
     };
 
     addToCart(itemToCart);
-    console.log(isInCart);
   };
 
   return (
