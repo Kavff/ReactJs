@@ -1,27 +1,35 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import dataRequest from "../../helpers/dataRequest";
 import ItemDetails from "../itemDetails/ItemDetails";
 import Loader from "../Loader/Loader";
+import { db } from "../../firebase/config"
+import { doc,getDoc } from "firebase/firestore/lite"
+
+
+
 const ItemDetailContainer = () => {
   const [products, setProducts] = useState([]);
-  const { itemId } = useParams();
   const [loading, setLoading] = useState(true);
+  
+  const { itemId } = useParams();
 
   useEffect(() => {
     setLoading(true);
 
-    dataRequest()
-      .then((res) => {
-        setProducts(res.find((prod) => prod.id === Number(itemId)));
-      })
-      .catch((err) => console.log(err))
-      .finally(() => {
-        setLoading(false);
-      });
-  }, [itemId]);
-  console.log(products);
+    // 1 - Build reference (sync)
+
+    const docRef = doc(db,'productos',itemId)
+
+    // 2 - Call DB (async)
+    
+    getDoc(docRef)
+    .then((doc) => {
+    setProducts({id: doc.id, ...doc.data()})
+    })
+    .finally(() => {
+      setLoading(false);
+    })  }, []);
   return (
     <>
       {loading ? (

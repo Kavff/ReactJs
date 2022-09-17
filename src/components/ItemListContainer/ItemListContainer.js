@@ -4,39 +4,41 @@ import ItemList from "../ItemList/ItemList";
 import ContainerTitle from "../ContainerTitle/ContainerTitle";
 import { useParams } from "react-router-dom";
 import Loader from "../Loader/Loader";
-import { collection,getDocs } from "firebase/firestore"
-import { db } from '../../firebase/config'
+import { db } from "../../firebase/config";
+import { collection, getDocs,  } from "firebase/firestore/lite";
 
 const ItemListContainer = () => {
   // Here in the container i use THE logic for my request from my API.
- 
+
   const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true); 
+  const [loading, setLoading] = useState(true);
   const { categoryId } = useParams();
 
   useEffect(() => {
-    
-    //1-  Built reference
-      const productosRef = collection(db, 'productos');
-    getDocs(productosRef)
+    setLoading(true)
+    //1-  Built reference (sync)
+    const productsRef = collection(db, "productos");
+/*     const q = query(productsRef,where("category" , "==", categoryId))
+ */
+    //2-  Consume reference (async)
+    getDocs(productsRef)
       .then((resp) => {
-        const productosDB = resp.docs.map  ((doc) => ({id : doc.id, ...doc.data()}) )
-        console.log(productosDB)
-        setProducts(productosDB)
-
-      }).finally(() => {
-        setLoading(false)
+        const productsDB = resp.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setProducts(productsDB);
       })
-
-    //2-  Consume reference
+      .finally(() => {
+        setLoading(false);
+      });
   }, [categoryId]);
-
 
   return (
     <>
       {loading ? (
         <div className="Spinner">
-         <Loader/>
+          <Loader />
         </div>
       ) : (
         <div className="containerList">
@@ -47,6 +49,5 @@ const ItemListContainer = () => {
     </>
   );
 };
-
 
 export default ItemListContainer;
