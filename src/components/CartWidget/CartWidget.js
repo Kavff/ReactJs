@@ -9,6 +9,7 @@ import { CartContext } from '../../context/CartContext';
 export function CartWidget() {
 
     const { cartQuantity } = useContext(CartContext)
+    
     return (
 
        <Link className='spanWid' to="/Cart">

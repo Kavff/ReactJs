@@ -1,19 +1,28 @@
 import React from "react";
+import "./ItemCart.scss";
 
 const ItemCart = ({ product }) => {
 
+
+
+  
   return (
-    <div>
-      <div>
-        <div>
+    <>
+    <div className="containerMain">
+      <div className="containerProduct">
+        <div className="containerImg">
           <img src={product.img} alt={product.name}></img>
+        </div>
+        <div className="containerDetails">
           <h3> {product.name}</h3>
-          <p> $ {product.price}</p>
-          <p> quantity: {product.quantity}</p>
+          <p className="containerPrice"> $ {product.price}</p>
+          <p> Quantity: "{product.quantity}"</p>
+          <p>Category: {product.category}</p>
         </div>
       </div>
       <hr />
     </div>
+    </>
   );
 };
 

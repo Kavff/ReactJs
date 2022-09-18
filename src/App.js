@@ -15,7 +15,8 @@ function App() {
 
 
   return (
-    <CartProvider>
+    // High order component
+    <CartProvider> 
       <BrowserRouter>
         <ThemeProvider theme={theme}>
           <Header />
@@ -38,3 +39,4 @@ function App() {
 }
 
 export default App;
+

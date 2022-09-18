@@ -1,0 +1,17 @@
+
+.containerMain{
+    background-color: rgb(209, 199, 199);
+
+    .containerProduct{
+
+        display: flex;
+        flex-direction: row;
+
+    }
+    .containerDetails{
+        font-size: 25px;
+        color: black;
+        margin:0px 10px
+
+    }
+}
