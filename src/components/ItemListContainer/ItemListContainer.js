@@ -5,7 +5,7 @@ import ContainerTitle from "../ContainerTitle/ContainerTitle";
 import { useParams } from "react-router-dom";
 import Loader from "../Loader/Loader";
 import { db } from "../../firebase/config";
-import { collection, getDocs,  } from "firebase/firestore/lite";
+import { collection, getDocs,query,where } from "firebase/firestore/lite";
 
 const ItemListContainer = () => {
   // Here in the container i use THE logic for my request from my API.
@@ -15,13 +15,14 @@ const ItemListContainer = () => {
   const { categoryId } = useParams();
 
   useEffect(() => {
-    setLoading(true)
+    setLoading(true);
     //1-  Built reference (sync)
     const productsRef = collection(db, "productos");
-/*     const q = query(productsRef,where("category" , "==", categoryId))
- */
+    const q = categoryId
+      ? query(productsRef, where("category", "==", categoryId))
+      : productsRef;
     //2-  Consume reference (async)
-    getDocs(productsRef)
+    getDocs(q)
       .then((resp) => {
         const productsDB = resp.docs.map((doc) => ({
           id: doc.id,

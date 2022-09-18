@@ -9,7 +9,7 @@ const ItemCount = ({ stock, counter, setCounter, handleAddToCart }) => {
     }
   };
   const handleSubtract = () => {
-    if (counter > 0) {
+    if (counter > 1) {
       setCounter(counter - 1);
     }
   };

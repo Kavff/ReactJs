@@ -11,22 +11,18 @@ import Button from "@mui/material/Button";
 
 const ItemDetails = ({ products }) => {
   const { cart, addToCart, isInCart } = useContext(CartContext);
-  console.log(cart);
 
-  const [counter, setCounter] = useState(1);
-  const [quantity,setQuantity] = useState(1);
-
+  const [quantity, setQuantity] = useState(1);
   const handleAddToCart = () => {
-    const itemToCart = {
+    const itemToCart = {  
       id: products.id,
       name: products.name,
       price: products.price,
-      stock: products.stock,
+      img: products.img,
+      category: products.category,
       quantity
     };
-
-    addToCart(itemToCart);
-    
+    addToCart(itemToCart);  
   };
 
   return (
@@ -72,8 +68,8 @@ const ItemDetails = ({ products }) => {
                 <ItemCount
                   initial={products.stock > 1 ? 1 : 0}
                   stock={products.stock}
-                  counter={counter}
-                  setCounter={setCounter}
+                  counter={quantity}
+                  setCounter={setQuantity}
                   handleAddToCart={handleAddToCart}
                 />
               )}

@@ -1,22 +1,20 @@
+import React from "react";
 
-import React from 'react'
+const ItemCart = ({ product }) => {
 
-
-const ItemCart = ({product}) => {
   return (
     <div>
-      
-      <img src={product.img} alt={product.name}></img>
-      <h3>{product.name}</h3>
-      <p> $ {product.price*product.quantity}</p>
-
-
-
+      <div>
+        <div>
+          <img src={product.img} alt={product.name}></img>
+          <h3> {product.name}</h3>
+          <p> $ {product.price}</p>
+          <p> quantity: {product.quantity}</p>
+        </div>
+      </div>
+      <hr />
     </div>
-  )
-}
+  );
+};
 
-export default ItemCart
-
-
-
+export default ItemCart;
