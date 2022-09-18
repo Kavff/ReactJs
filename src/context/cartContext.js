@@ -1,9 +1,11 @@
 import {createContext, useState } from "react";
-
+import Swal from 'sweetalert2';
 
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
+
+
 
     const [cart,setCart] = useState([])
 
@@ -11,9 +13,18 @@ export const CartProvider = ({ children }) => {
       setCart([...cart,product])
     }
   
+    const removeProduct = (id)=> {
+
+      setCart(cart.filter((product) => product.id !== id))
+    }
     const isInCart = (id) => {
       return  cart.some((product) => product.id === id)
     }
+
+    /* const increaseQuantityInCart = (id) => {
+      
+
+    } */
   
     const cartQuantity = () => {
         return cart.reduce((acc,product) => acc + product.quantity,0)
@@ -24,7 +35,19 @@ export const CartProvider = ({ children }) => {
     }
 
     const emptyCart = () => {
-      setCart([])
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          setCart([])
+        }
+      })
     }
   return <CartContext.Provider value={{
     cart,
@@ -32,7 +55,8 @@ export const CartProvider = ({ children }) => {
     isInCart,
     cartQuantity,
     cartTotal,
-    emptyCart
+    emptyCart,
+    removeProduct
   }}>
     {children}
     </CartContext.Provider>;
