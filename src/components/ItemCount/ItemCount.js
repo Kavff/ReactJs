@@ -2,7 +2,8 @@ import "./ItemCount.scss";
 import React from "react";
 import Button from "@mui/material/Button";
 
-const ItemCount = ({ stock, counter, setCounter, handleAddToCart }) => {
+
+const ItemCount = ({ stock, counter, setCounter,handleAddToCart}) => {
   const handleAdd = () => {
     if (counter < stock) {
       setCounter(counter + 1);
@@ -13,7 +14,6 @@ const ItemCount = ({ stock, counter, setCounter, handleAddToCart }) => {
       setCounter(counter - 1);
     }
   };
-
   return (
     <>
       <div className="counterContainer">

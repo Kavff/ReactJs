@@ -1,11 +1,11 @@
 import { Button } from "@mui/material";
-import React, { useContext } from "react";
-import { CartContext } from "../../context/CartContext";
+import React from "react";
+import { useCartContext } from "../../context/CartContext";
 import ItemCart from "../itemCart/ItemCart";
 import "./Cart.scss";
 
 const Cart = ({ product = [] }) => {
-  const { cart,cartTotal,emptyCart } = useContext(CartContext);
+  const { cart,cartTotal,emptyCart } = useCartContext();
 
   return (
     <div className="containerCart">

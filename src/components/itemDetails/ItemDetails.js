@@ -4,13 +4,13 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import ItemCount from "../ItemCount/ItemCount";
 import "./itemDetails.scss";
-import { useState, useContext } from "react";
-import { CartContext } from "../../context/CartContext";
+import { useState } from "react";
+import { useCartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 
 const ItemDetails = ({ products }) => {
-  const { cart, addToCart, isInCart } = useContext(CartContext);
+  const { addToCart, isInCart } = useCartContext();
 
   const [quantity, setQuantity] = useState(1);
   const handleAddToCart = () => {

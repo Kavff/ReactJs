@@ -1,13 +1,12 @@
 import { IconButton } from "@mui/material";
-import React, { useContext } from "react";
+import React from "react";
 import "./ItemCart.scss";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { CartContext } from "../../context/CartContext";
+import { useCartContext } from "../../context/CartContext";
 import EditIcon from "@mui/icons-material/Edit";
-import Fab from "@mui/material/Fab";
 
 const ItemCart = ({ product }) => {
-  const { removeProduct } = useContext(CartContext);
+  const { removeProduct } = useCartContext();
 
   return (
     <>
@@ -20,6 +19,7 @@ const ItemCart = ({ product }) => {
             <h3> {product.name}</h3>
             <p className="containerPrice"> $ {product.price}</p>
             <p> Quantity: "{product.quantity}"</p>
+            
             <p>Category: {product.category}</p>
             <IconButton
               color="primary"
