@@ -8,6 +8,7 @@ import Logo from "../../assets/logo_small.png";
 import CartWidget from "../CartWidget/CartWidget";
 import { Link } from "react-router-dom";
 import SearchBox from "../SearchBox/SearchBox";
+import Categories from "../Categories/Categories";
 
 const Header = () => {
   return (
@@ -33,7 +34,9 @@ const Header = () => {
             <Link to="/LoginOrRegister" className="links">
               Login or Register
             </Link>
+
           </Toolbar>
+          <Categories/>
         </AppBar>
       </Box>
     </div>
