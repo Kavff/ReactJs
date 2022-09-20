@@ -13,6 +13,7 @@ export const CartProvider = ({ children }) => {
   };
 
   const removeProduct = (id) => {
+    
     setCart(cart.filter((product) => product.id !== id));
   };
   const isInCart = (id) => {
