@@ -1,16 +1,21 @@
 
 .containerCart{
-    background-color: rgb(209, 199, 199);
-
+/*     background-color: rgb(209, 199, 199);
+ */
+ background-color: white;
     display: flex;
     flex-direction: column;
     .containerTitle{
         display: flex;
         align-items: center;
         justify-content: center;
+        background-color: white;
+
         .h2Title{
             font-size: 3rem;
             font-weight: bolder;
+            background-color: white;
+
         }
     }
     .containerSubclass{
@@ -20,6 +25,8 @@
         justify-content: flex-end;
         margin: 0px 10px 20px;
         margin-right: 50px;
+        background-color: white;
+
        
 
     }

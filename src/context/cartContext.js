@@ -20,11 +20,8 @@ export const CartProvider = ({ children }) => {
     return cart.some((product) => product.id === id);
   };
 
-  /* const increaseQuantityInCart = (id) => {
-      
 
-    } */
-
+  
   const cartQuantity = () => {
     return cart.reduce((acc, product) => acc + product.quantity, 0);
   };
@@ -36,6 +33,7 @@ export const CartProvider = ({ children }) => {
     );
   };
 
+  
   const emptyCart = () => {
     Swal.fire({
       title: "Are you sure?",
@@ -52,6 +50,20 @@ export const CartProvider = ({ children }) => {
     });
   };
 
+  const  finishCheckout = (id) => {
+    Swal.fire({
+      title: "Successful purchase",
+      text: `Your order number is: ${id}`,
+      icon: "success",
+      confirmButtonColor: "#3085d6",
+      confirmButtonText: "Enjoy!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        setCart([]);
+      }
+    });
+    
+  }
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
@@ -66,6 +78,7 @@ export const CartProvider = ({ children }) => {
         cartTotal,
         emptyCart,
         removeProduct,
+        finishCheckout
       }}
     >
       {children}

@@ -9,6 +9,7 @@ import LoginOrRegister from "./components/LoginOrRegister/LoginOrRegister";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import { CartProvider } from "./context/CartContext";
 import Cart from "./components/Cart/Cart";
+import Checkout from "./components/Checkout/Checkout";
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
             ></Route>
             <Route path="/LoginOrRegister" element={<LoginOrRegister />} />
             <Route path="/Cart" element={<Cart/>}></Route>
+            <Route path="/Checkout" element={<Checkout/>}></Route> 
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </ThemeProvider>

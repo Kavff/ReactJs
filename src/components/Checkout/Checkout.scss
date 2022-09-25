@@ -1,0 +1,23 @@
+
+
+
+.containerDiv{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .containerDivForm{
+        display: flex;
+        flex-direction: column;
+    .containerFormControl{
+        width: 500px;
+        
+        display: flex;
+        flex-direction: column;
+    .containerInput{
+        margin:10px
+    }
+    }
+    }
+}

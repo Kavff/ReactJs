@@ -9,13 +9,10 @@ const options = [
   'None',
   'Rolex',
   'Hamilton',
-  'Rolex',
-  'Hamilton',
-  'Rolex',
-  'Hamilton',
-  'Rolex',
-  'Hamilton',
-
+  'Breguet',
+  'Richard Mille',
+  'Audemars Piguet',
+  
 ];
 
 const ITEM_HEIGHT = 8;
@@ -60,7 +57,7 @@ const LongMenu = () => {
         }}
       >
         {options.map((option) => (
-          <MenuItem key={option} selected={option === 'asdasdasd'} onClick={handleClose}>
+          <MenuItem key={option} selected={option === 'Rolex'} onClick={handleClose}>
             {option}
           </MenuItem>
         ))}

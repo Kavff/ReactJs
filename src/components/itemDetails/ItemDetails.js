@@ -8,21 +8,24 @@ import { useState } from "react";
 import { useCartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
+import AddButton from "../AddButton/AddButton";
+
 
 const ItemDetails = ({ products }) => {
   const { addToCart, isInCart } = useCartContext();
 
   const [quantity, setQuantity] = useState(1);
   const handleAddToCart = () => {
-    const itemToCart = {  
+    const itemToCart = {
       id: products.id,
       name: products.name,
       price: products.price,
       img: products.img,
       category: products.category,
-      quantity
+      stock: products.stock,
+      quantity,
     };
-    addToCart(itemToCart);  
+    addToCart(itemToCart);
   };
 
   return (
@@ -53,7 +56,7 @@ const ItemDetails = ({ products }) => {
               {isInCart(products.id) ? (
                 <>
                   <Link className="cardLink" to="/">
-                    <Button variant="contained" color="secondary" >
+                    <Button variant="contained" color="secondary">
                       Continue shopping
                     </Button>
                   </Link>
@@ -62,16 +65,23 @@ const ItemDetails = ({ products }) => {
                       Complete my order
                     </Button>
                   </Link>
-                  <p className="cardP" >you already have this product in your cart</p>
+                  <p className="cardP">
+                    you already have this product in your cart
+                  </p>
                 </>
               ) : (
-                <ItemCount
-                  initial={products.stock > 1 ? 1 : 0}
-                  stock={products.stock}
-                  counter={quantity}
-                  setCounter={setQuantity}
-                  handleAddToCart={handleAddToCart}
-                />
+                <>
+                  <h3>Stock: {products.stock}</h3>
+                  <hr className="counterHr" />
+
+                  <ItemCount
+                    stock={products.stock}
+                    counter={quantity}
+                    setCounter={setQuantity}
+                  />
+                  <hr className="cardHr" />
+                  <AddButton handleAddToCart={handleAddToCart} />
+                </>
               )}
             </div>
           </Typography>
