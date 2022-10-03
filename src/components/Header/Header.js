@@ -9,7 +9,7 @@ import CartWidget from "../CartWidget/CartWidget";
 import { Link } from "react-router-dom";
 import SearchBox from "../SearchBox/SearchBox";
 import Categories from "../Categories/Categories";
-import { useLoginContext } from "../../context/LoginContext";
+import { useLoginContext } from "../../Context/LoginContext";
 import { Button } from "@mui/material";
 
 const Header = () => {

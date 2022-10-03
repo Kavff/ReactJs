@@ -2,7 +2,7 @@ import { Button, Input } from "@mui/material";
 import "./Checkout.scss"
 import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
-import { useCartContext } from "../../context/CartContext";
+import { useCartContext } from "../../Context/CartContext";
 import { addDoc, collection, getDoc, updateDoc,doc } from "firebase/firestore/lite";
 import { db } from "../../firebase/config";
 
