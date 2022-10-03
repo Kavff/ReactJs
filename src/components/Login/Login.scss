@@ -1,0 +1,43 @@
+
+    .mainDivLogin{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 100px;
+
+        .formLogin{
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .inputsLogin{
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-size: 30px;
+                margin: 10px;
+
+                
+            }
+    
+            
+             .buttonLogin{
+                width: 150px;
+                height: 40px;
+                color: aqua;
+                font-size: 15px;
+                margin:10px;
+                cursor:pointer
+            }
+        }
+        .linkRegister{
+            width: 150px;
+            height: 40px;
+            color: aqua;
+            font-size: 15px;
+            margin:10px;
+            text-decoration: none;
+            cursor:pointer
+        }
+    }
+
+    

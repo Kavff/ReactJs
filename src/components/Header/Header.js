@@ -9,8 +9,12 @@ import CartWidget from "../CartWidget/CartWidget";
 import { Link } from "react-router-dom";
 import SearchBox from "../SearchBox/SearchBox";
 import Categories from "../Categories/Categories";
+import { useLoginContext } from "../../context/LoginContext";
+import { Button } from "@mui/material";
 
 const Header = () => {
+
+  const {user,logout} = useLoginContext()
   return (
     <div>
       <Box sx={{ flexGrow: 1 }}>
@@ -31,9 +35,13 @@ const Header = () => {
 
             <SearchBox />
             <CartWidget fontSize={"large"}/>
-            <Link to="/LoginOrRegister" className="links">
-              Login or Register
-            </Link>
+            <div>
+              <small>Welcome: {user.user}</small>
+              <Button onClick={logout} variant="text" color="secondary">
+                Logout
+              </Button> 
+
+            </div>
 
           </Toolbar>
           <Categories/>

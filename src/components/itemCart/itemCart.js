@@ -11,12 +11,6 @@ const ItemCart = ({ product,handleAddToCart}) => {
   const { removeProduct } = useCartContext();
   const [quantity, setQuantity] = useState(product.quantity);
 
-    const [appearButton,setAppearButton] = useState(false)
-    const handleToggle=()=>{
-      setAppearButton(!appearButton);
-    }
-
-  console.log(appearButton)
   return (
     <>
       <div className="containerMain">
@@ -28,19 +22,6 @@ const ItemCart = ({ product,handleAddToCart}) => {
             <h3> {product.name}</h3>
             <p className="containerPrice"> $ {product.price}</p>
             <p>Qty: {product.quantity}</p>
-             <div className={`buttonsItemCountFalse ` + (appearButton ? `buttonsItemCountTrue` : ``)}>
-              <ItemCount
-                stock={product.stock}
-                counter={quantity}
-                setCounter={setQuantity}
-              />
-              <Button 
-              variant="contained" 
-              color="primary"
-              onClick={handleAddToCart}>   
-                accept
-              </Button>
-            </div>
             <p>Category: {product.category}</p>
             <div className="editButton">
               <IconButton
@@ -50,16 +31,7 @@ const ItemCart = ({ product,handleAddToCart}) => {
                 size="large"
               >
                 <DeleteIcon fontSize="inherit" />
-              </IconButton>
-              <IconButton
-                color="primary"
-                onClick={handleToggle}
-                aria-label="edit"
-                size="large"
-              >
-            
-                <EditIcon fontSize="inherit" />
-              </IconButton>
+           </IconButton>
             </div>
           </div>
         </div>

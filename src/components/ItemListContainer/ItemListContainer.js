@@ -36,7 +36,9 @@ const ItemListContainer = () => {
   }, [categoryId]);
 
   return (
+
     <>
+          
       {loading ? (
         <div className="Spinner">
           <Loader />

@@ -3,7 +3,7 @@ import "./Checkout.scss"
 import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
-import { addDoc, collection } from "firebase/firestore/lite";
+import { addDoc, collection, getDoc, updateDoc,doc } from "firebase/firestore/lite";
 import { db } from "../../firebase/config";
 
 
@@ -51,6 +51,22 @@ const Checkout = () => {
         }
 
         const ordersRef = collection(db,`orders`);
+
+        cart.forEach((item) => {
+
+          const docRef = doc(db,'productos',item.id)
+
+          getDoc(docRef)
+              .then((doc) => {
+                  updateDoc(docRef,{
+                    stock: doc.data().stock  - item.quantity
+                  })
+              })
+
+        })
+
+
+
 
         addDoc(ordersRef,purchaseOrder)
             .then((doc) =>{

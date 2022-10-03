@@ -27,7 +27,18 @@
         margin-right: 50px;
         background-color: white;
 
-       
-
+       .checkoutButton{
+           margin:10px;
+           .pCheckout{
+            font-size: 20px;
+            margin:0;
+           }
+    }
+         .linkCheckout{
+            text-decoration: none;
+    }
+    .deleteAllButton{
+             margin-right: 45px;
+    }
     }
 }

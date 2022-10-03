@@ -29,12 +29,12 @@ const Cart = ({ product = [] }) => {
         <h2>
           Subtotal: ({cartQuantity()} Watches) ${cartTotal()}
         </h2>
-        <Link to="/Checkout">
-        <Button variant="contained" color="secondary">
-        Proceed to Checkout
+        <Link className="linkCheckout" to="/Checkout">
+        <Button className="checkoutButton" variant="contained" color="secondary">
+        <p className="pCheckout">Proceed to Checkout</p>
       </Button>
       </Link>
-        <Button onClick={emptyCart} variant="contained" color="primary">
+        <Button className="deleteAllButton" onClick={emptyCart} variant="contained" color="primary">
           Delete all products
         </Button>
         
