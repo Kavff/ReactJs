@@ -5,7 +5,7 @@ import CardContent from "@mui/material/CardContent";
 import ItemCount from "../ItemCount/ItemCount";
 import "./itemDetails.scss";
 import { useState } from "react";
-import { useCartContext } from "../../context/CartContext";
+import { useCartContext } from "../../Context/CartContext";
 import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 import AddButton from "../AddButton/AddButton";
