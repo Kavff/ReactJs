@@ -1,16 +1,13 @@
-import { IconButton, Button } from "@mui/material";
+import { IconButton } from "@mui/material";
 import React from "react";
 import "./ItemCart.scss";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useCartContext } from "../../context/CartContext";
-import EditIcon from "@mui/icons-material/Edit";
-import ItemCount from "../ItemCount/ItemCount";
-import { useState } from "react";
 
 const ItemCart = ({ product,handleAddToCart}) => {
   const { removeProduct } = useCartContext();
-  const [quantity, setQuantity] = useState(product.quantity);
-
+/*   const [quantity, setQuantity] = useState(product.quantity);
+ */
   return (
     <>
       <div className="containerMain">
