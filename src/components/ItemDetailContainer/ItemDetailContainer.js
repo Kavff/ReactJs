@@ -15,21 +15,19 @@ const ItemDetailContainer = () => {
   const { itemId } = useParams();
 
   useEffect(() => {
-    setLoading(true);
-
     // 1 - Build reference (sync)
-
     const docRef = doc(db,'productos',itemId)
-
     // 2 - Call DB (async)
-    
     getDoc(docRef)
     .then((doc) => {
-    setProducts({id: doc.id, ...doc.data()})
+      setProducts({id: doc.id, ...doc.data()})
+      setLoading(true);
     })
     .finally(() => {
-      setLoading(false);
-    })  },);
+      setLoading(false)}
+    )
+  },);
+
   return (
     <>
       {loading ? (
