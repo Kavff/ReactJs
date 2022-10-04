@@ -1,6 +1,6 @@
 import { createContext,useEffect, useContext, useState } from "react";
-import Swal from "sweetalert2";
-
+/* import Swal from "sweetalert2";
+ */
 export const CartContext = createContext();
 
 const init = JSON.parse(localStorage.getItem("cart")) || []
@@ -35,15 +35,18 @@ export const CartProvider = ({ children }) => {
 
   
   const emptyCart = () => {
-    Swal.fire({
+/*     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
-    }).then((result) => {
+      confirmButtonText: "Yes, delete it!", 
+      
+    })*/
+    console.log()
+    .then((result) => {
       if (result.isConfirmed) {
         setCart([]);
       }
@@ -51,13 +54,16 @@ export const CartProvider = ({ children }) => {
   };
 
   const  finishCheckout = (id) => {
-    Swal.fire({
+   /*   Swal.fire({
       title: "Successful purchase",
       text: `Your order number is: ${id}`,
       icon: "success",
       confirmButtonColor: "#3085d6",
-      confirmButtonText: "Enjoy!",
-    }).then((result) => {
+      confirmButtonText: "Enjoy!", 
+    }) */
+    
+    console.log("This is your order")
+    .then((result) => {
       if (result.isConfirmed) {
         setCart([]);
       }
