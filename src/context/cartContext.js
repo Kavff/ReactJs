@@ -1,9 +1,9 @@
-import { createContext,useEffect, useContext, useState } from "react";
+import { createContext, useEffect, useContext, useState } from "react";
 /* import Swal from "sweetalert2";
  */
 export const CartContext = createContext();
 
-const init = JSON.parse(localStorage.getItem("cart")) || []
+const init = JSON.parse(localStorage.getItem("cart")) || [];
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState(init);
@@ -13,15 +13,12 @@ export const CartProvider = ({ children }) => {
   };
 
   const removeProduct = (id) => {
-    
     setCart(cart.filter((product) => product.id !== id));
   };
   const isInCart = (id) => {
     return cart.some((product) => product.id === id);
   };
 
-
-  
   const cartQuantity = () => {
     return cart.reduce((acc, product) => acc + product.quantity, 0);
   };
@@ -33,43 +30,35 @@ export const CartProvider = ({ children }) => {
     );
   };
 
-  
   const emptyCart = () => {
-/*     Swal.fire({
+    Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!", 
-      
-    })*/
-    console.log()
-    .then((result) => {
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
       if (result.isConfirmed) {
         setCart([]);
       }
     });
   };
 
-  const  finishCheckout = (id) => {
-   /*   Swal.fire({
+  const finishCheckout = (id) => {
+    Swal.fire({
       title: "Successful purchase",
       text: `Your order number is: ${id}`,
       icon: "success",
       confirmButtonColor: "#3085d6",
-      confirmButtonText: "Enjoy!", 
-    }) */
-    
-    console.log("This is your order")
-    .then((result) => {
+      confirmButtonText: "Enjoy!",
+    }).then((result) => {
       if (result.isConfirmed) {
         setCart([]);
       }
     });
-    
-  }
+  };
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
@@ -84,7 +73,7 @@ export const CartProvider = ({ children }) => {
         cartTotal,
         emptyCart,
         removeProduct,
-        finishCheckout
+        finishCheckout,
       }}
     >
       {children}
