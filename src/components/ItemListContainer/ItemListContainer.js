@@ -38,7 +38,6 @@ const ItemListContainer = () => {
   return (
 
     <>
-          
       {loading ? (
         <div className="Spinner">
           <Loader />
