@@ -1,6 +1,6 @@
 import { createContext, useEffect, useContext, useState } from "react";
-/* import Swal from "sweetalert2";
- */
+import Swal from "sweetalert2";
+ 
 export const CartContext = createContext();
 
 const init = JSON.parse(localStorage.getItem("cart")) || [];

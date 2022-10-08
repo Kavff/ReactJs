@@ -8,9 +8,9 @@ import "./Cart.scss";
 const Cart = ({ product = [] }) => {
   const { cart, cartTotal, emptyCart, cartQuantity } = useCartContext();
 
-  if(cart.length === 0 ) {
-    return <Navigate to="/"/>
-}
+  if (cart.length === 0) {
+    return <Navigate to="/" />;
+  }
   return (
     <div className="containerCart">
       <div className="containerWatches">
@@ -30,14 +30,24 @@ const Cart = ({ product = [] }) => {
           Subtotal: ({cartQuantity()} Watches) ${cartTotal()}
         </h2>
         <Link className="linkCheckout" to="/Checkout">
-        <Button className="checkoutButton" variant="contained" color="secondary">
-        <p className="pCheckout">Proceed to Checkout</p>
-      </Button>
-      </Link>
-        <Button className="deleteAllButton" onClick={emptyCart} variant="contained" color="primary">
-          Delete all products
-        </Button>
-        
+          <Button
+            className="checkoutButton"
+            variant="contained"
+            color="secondary"
+          >
+            <p className="pCheckout">Proceed to Checkout</p>
+          </Button>
+        </Link>
+        <div>
+          <Button
+            className="deleteAllButton"
+            onClick={emptyCart}
+            variant="contained"
+            color="primary"
+          >
+            Delete all products
+          </Button>
+        </div>
       </div>
     </div>
   );

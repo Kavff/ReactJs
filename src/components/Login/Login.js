@@ -45,25 +45,28 @@ const Login = () => {
           onChange={handlePassChange}
         ></Input>
         <div>
-          <Button
-            className="buttonLogin"
-            type="submit"
-            variant="contained"
-            color="primary"
-          >
-            Login
-          </Button>
-
-          <Link className="linkRegister" to="/Register">
+          <>
             <Button
-              className="linkRegister"
+              className="buttonLogin"
               type="submit"
               variant="contained"
               color="primary"
             >
-              Register
+              Login
             </Button>
-          </Link>
+          </>
+          <>
+            <Link className="linkRegister" to="/Register">
+              <Button
+                className="linkRegister"
+                type="submit"
+                variant="contained"
+                color="primary"
+              >
+                Register
+              </Button>
+            </Link>
+          </>
         </div>
       </form>
     </div>
