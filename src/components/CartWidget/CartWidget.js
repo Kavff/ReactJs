@@ -1,31 +1,23 @@
-import IconButton from '@mui/material/IconButton'
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import './CartWidget.scss'
-import { Link } from 'react-router-dom';
-import { useContext } from 'react';
-import { CartContext } from '../../Context/CartContext';
-
+import IconButton from "@mui/material/IconButton";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import "./CartWidget.scss";
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../../Context/CartContext";
 
 export function CartWidget() {
+  const { cartQuantity } = useContext(CartContext);
 
-    const { cartQuantity } = useContext(CartContext)
-    
-    return (
-
-       <Link className='spanWid' to="/Cart">
+  return (
+    <Link className="spanWid" to="/Cart">
+      <>
         <IconButton>
           <ShoppingCartIcon color="secondary"></ShoppingCartIcon>
-          <span className='spanWid'>{cartQuantity()}</span>
+          <span className="spanWid">{cartQuantity()}</span>
         </IconButton>
-
-        
-        </Link>
-    );
+      </>
+    </Link>
+  );
 }
 
 export default CartWidget;
-
-
-
-
-
