@@ -84,4 +84,4 @@ export const CartProvider = ({ children }) => {
 
 export const useCartContext = () => {
   return useContext(CartContext);
-};
+}
