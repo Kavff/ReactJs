@@ -1,7 +1,7 @@
 import { createContext, useEffect, useContext, useState } from "react";
 import Swal from "sweetalert2";
- 
-export const CartContext = createContext();
+
+const CartContext = createContext();
 
 const init = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -82,6 +82,10 @@ export const CartProvider = ({ children }) => {
   );
 };
 
+export default CartProvider;
+
+export { CartContext };
+
 export const useCartContext = () => {
   return useContext(CartContext);
-}
+};

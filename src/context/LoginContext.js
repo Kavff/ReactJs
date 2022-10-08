@@ -49,6 +49,7 @@ export const LoginProvider = ({ children }) => {
   );
 };
 
+export default LoginProvider;
 export const useLoginContext  = () =>{
     return useContext(LoginContext)
 }
