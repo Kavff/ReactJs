@@ -1,12 +1,15 @@
 import { Button } from "@mui/material";
-import React from "react";
+import React ,{ useContext } from "react";
 import { Link, Navigate } from "react-router-dom";
-import { useCartContext } from "../../Context/CartContext";
+import { CartContext } from "../../Context/CartContext";
+ 
 import ItemCart from "../ItemCart/ItemCart";
 import "./Cart.scss";
 
+
 const Cart = ({ product = [] }) => {
-  const { cart, cartTotal, emptyCart, cartQuantity } = useCartContext();
+  
+  const { cart, cartTotal, emptyCart, cartQuantity } = useContext(CartContext);
 
   if (cart.length === 0) {
     return <Navigate to="/" />;

@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from "react";
 
-export const LoginContext = createContext();
+const LoginContext = createContext();
 
 const users = [
   {
@@ -50,6 +50,9 @@ export const LoginProvider = ({ children }) => {
 };
 
 export default LoginProvider;
-export const useLoginContext  = () =>{
+
+export { LoginContext }
+
+ export const useLoginContext  = () =>{
     return useContext(LoginContext)
-}
+}  

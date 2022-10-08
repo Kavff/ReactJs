@@ -1,17 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import Typography from "@mui/material/Typography";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import ItemCount from "../ItemCount/ItemCount";
 import "./itemDetails.scss";
+
 import { useState } from "react";
-import { useCartContext } from "../../Context/CartContext";
+import { CartContext } from "../../Context/CartContext";
+
 import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 import AddButton from "../AddButton/AddButton";
 
 const ItemDetails = ({ products }) => {
-  const { addToCart, isInCart } = useCartContext();
+
+
+  const { addToCart, isInCart } =  useContext(CartContext); 
 
   const [quantity, setQuantity] = useState(1);
   const handleAddToCart = () => {
