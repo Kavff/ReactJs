@@ -59,6 +59,7 @@ export const CartProvider = ({ children }) => {
       }
     });
   };
+
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
@@ -66,8 +67,8 @@ export const CartProvider = ({ children }) => {
   return (
     <CartContext.Provider
       value={{
-        cart,
         addToCart,
+        cart,
         isInCart,
         cartQuantity,
         cartTotal,

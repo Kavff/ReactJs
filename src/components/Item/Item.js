@@ -19,7 +19,7 @@ const Item = ({ product }) => {
   return (
     <div>
       <ThemeProvider theme={theme}>
-        <Card className="cardMain" sx={{ width: 350, margin: 5 }}>
+        <Card className="cardMain" sx={{ width: 350,height:625, margin: 5 }}>
           <div className="cardImg">
             <img src={product.img} alt={product.name}></img>
           </div>
