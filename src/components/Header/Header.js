@@ -10,45 +10,40 @@ import { Link } from "react-router-dom";
 import SearchBox from "../SearchBox/SearchBox";
 import Categories from "../Categories/Categories";
 import { useLoginContext } from "../../Context/LoginContext";
- 
-import { Button } from "@mui/material";
+import { Button } from "@mui/material"
 
 const Header = () => {
-
-  const {user,logout} = useLoginContext()
+  const { user, logout } = useLoginContext();
   return (
-    <div>
       <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="sticky" color="primary">
-          <Toolbar>
-            <Typography variant="h3" component="div" sx={{ flexGrow: 1 }}>
-              <div className="imgDiv">
-                <Link to="/">
-                  <img
-                    width={"550px"}
-                    height={"80px"}
-                    src={Logo}
-                    alt="logo"
-                  ></img>
-                </Link>
-              </div>
-            </Typography>
-
-            <SearchBox />
-            <CartWidget fontSize={"large"}/>
-            <div>
-              <small>Welcome: {user.user}</small>
-              <Button onClick={logout} variant="text" color="secondary">
-                Logout
-              </Button> 
-
-            </div>
-
-          </Toolbar>
-          <Categories/>
-        </AppBar>
+          <AppBar position="sticky" color="primary">
+              <Toolbar>
+                  <Typography variant="h3" component="div" sx={{ flexGrow: 1 }}>
+                    <div className="imgDiv">
+                      <Link to="/">
+                        <img
+                          width={"550px"}
+                          height={"80px"}
+                          src={Logo}
+                          alt="logo"
+                        ></img>
+                      </Link>
+                    </div>
+                  </Typography>
+                  <div>
+                    <SearchBox />
+                  </div>
+                  <div>
+                    <CartWidget fontSize={"large"} />
+                  </div>
+                    <small>Welcome: {user.user}</small>
+                    <Button onClick={logout} variant="text" color="secondary">
+                      Logout
+                    </Button>
+              </Toolbar>
+                <Categories />
+          </AppBar>
       </Box>
-    </div>
   );
 };
 
