@@ -1,7 +1,7 @@
 import { Button } from "@mui/material";
 import React ,{ useContext } from "react";
 import { Link, Navigate } from "react-router-dom";
-import { CartContext } from "../../Context/CartContext";
+import { CartContext } from "../../context/CartContext";
  
 import ItemCart from "../ItemCart/ItemCart";
 import "./Cart.scss";

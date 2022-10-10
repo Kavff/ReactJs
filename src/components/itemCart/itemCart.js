@@ -2,7 +2,7 @@ import { IconButton } from "@mui/material";
 import React, { useContext } from "react";
 import "./ItemCart.scss";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { CartContext } from "../../Context/CartContext";
+import { CartContext } from "../../context/CartContext";
 
 const ItemCart = ({ product,handleAddToCart}) => {
 
