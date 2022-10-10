@@ -2,7 +2,7 @@ import { Button, Input } from "@mui/material";
 import "./Checkout.scss"
 import React, { useContext, useState } from "react";
 import { Navigate } from "react-router-dom";
-import { CartContext } from "../../context/CartContext1";
+import { CartContext1 } from "../../context/CartContext1";
  
 import { addDoc, collection, getDoc, updateDoc,doc } from "firebase/firestore/lite";
 import { db } from "../../firebase/config";
@@ -11,7 +11,7 @@ import { db } from "../../firebase/config";
 
 const Checkout = () => {
 
-    const {cart,cartTotal,finishCheckout} = useContext(CartContext)
+    const {cart,cartTotal,finishCheckout} = useContext(CartContext1)
 
     const [values,setValues] = useState({
         name: ``,

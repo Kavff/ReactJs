@@ -1,5 +1,5 @@
 import React from "react";
-import { useLoginContext } from "../Context/LoginContext";
+import { useLoginContext } from "../context/LoginContext";
 import { BrowserRouter } from "react-router-dom";
 import PrivateRoutes from "./PrivateRoutes";
 import PublicRoutes from "./PublicRoutes";

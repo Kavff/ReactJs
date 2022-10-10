@@ -3,13 +3,13 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import "./CartWidget.scss";
 import { Link } from "react-router-dom";
 import React, {  useContext } from "react";
- import { CartContext }  from "../../context/CartContext1";
+ import { CartContext1 }  from "../../context/CartContext1";
 
 
 export function CartWidget() {
-/*   const { cartQuantity } = useContext(CartContext);
+/*   const { cartQuantity } = useContext(CartContext1);
  */
-const { cartQuantity } = useContext(CartContext);
+const { cartQuantity } = useContext(CartContext1);
 
   return (
     <Link className="spanWid" to="/Cart">

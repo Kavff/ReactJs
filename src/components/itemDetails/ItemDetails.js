@@ -6,7 +6,7 @@ import ItemCount from "../ItemCount/ItemCount";
 import "./itemDetails.scss";
 
 import { useState } from "react";
-import { CartContext } from "../../Context/CartContext1";
+import { CartContext1 } from "../../context/CartContext1";
 
 import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
@@ -15,7 +15,7 @@ import AddButton from "../AddButton/AddButton";
 const ItemDetails = ({ products }) => {
 
 
-  const { addToCart, isInCart } =  useContext(CartContext); 
+  const { addToCart, isInCart } =  useContext(CartContext1); 
 
   const [quantity, setQuantity] = useState(1);
   const handleAddToCart = () => {
