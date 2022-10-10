@@ -3,7 +3,7 @@ import React ,{ useContext } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { CartContext1 } from "../../context/CartContext1";
  
-import ItemCart from "../ItemCart/ItemCart";
+import ItemCart from "../itemCart/ItemCart";
 import "./Cart.scss";
 
 
