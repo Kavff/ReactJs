@@ -28,7 +28,9 @@ export const CartProvider = ({ children }) => {
       (acc, product) => acc + product.quantity * product.price,
       0
     );
-  };
+  };   
+
+  
 
   const emptyCart = () => {
     Swal.fire({
