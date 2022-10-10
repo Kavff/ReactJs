@@ -7,8 +7,7 @@ import { CartContext1 } from "../../context/CartContext1";
 const ItemCart = ({ product,handleAddToCart}) => {
 
   const { removeProduct } = useContext(CartContext1);
-/*   const [quantity, setQuantity] = useState(product.quantity);
- */ 
+
   return (
     <>
       <div className="containerMain">
