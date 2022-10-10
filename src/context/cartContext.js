@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState,useContext } from "react";
 import Swal from "sweetalert2";
 
 const CartContext = createContext();
@@ -86,6 +86,7 @@ export default CartProvider;
 
 export { CartContext }
 
-/* export const useCartContext = () => {
+
+export const useCartContext = () => {
   return useContext(CartContext);
-}; */
+}; 
