@@ -30,7 +30,7 @@ const Register = () => {
             variant="contained"
             color="primary"
           >
-            Send
+            Send!
           </Button>
           <Link className="linkBack" to="/Login">
             <Button
