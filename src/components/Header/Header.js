@@ -1,5 +1,6 @@
 import "./Header.scss";
 import * as React from "react";
+import { useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -11,9 +12,18 @@ import Logo from "../../assets/logo_small.png";
  */ import Categories from "../Categories/Categories";
 import { useLoginContext } from "../../context/LoginContext";
 import { Button } from "@mui/material";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../../firebase/config";
+
 
 const Header = () => {
-  const { user, logout } = useLoginContext();
+  const { logout } = useLoginContext();
+  const [user,setUser] = useState({})
+
+  onAuthStateChanged(auth,(currentUser) => {
+    setUser(currentUser);
+  })
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="sticky" color="primary">
@@ -36,7 +46,7 @@ const Header = () => {
                     <div>
                     <CartWidget fontSize={"large"} />
                   </div> */}
-            <small>Welcome: {user.user}</small>
+            <small>Welcome: {user.email}</small>
             <Button onClick={logout} variant="text" color="secondary">
               Logout
             </Button>
