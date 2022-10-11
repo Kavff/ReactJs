@@ -5,8 +5,7 @@ import { LoginContext } from "../../context/LoginContext";
 import "./Login.scss";
 
 const Login = () => {
-  const { login, user } = useContext(LoginContext);
-  console.log(user);
+  const { login } = useContext(LoginContext);
 
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
@@ -21,6 +20,7 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    
     login({
       email,
       pass,

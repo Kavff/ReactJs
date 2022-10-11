@@ -1,49 +1,38 @@
 import { createContext, useContext, useState } from "react";
-
+import {signInWithEmailAndPassword } from 'firebase/auth'
+import { auth } from '../firebase/config'
 const LoginContext = createContext();
 
-const users = [
-  {
-    email: "abc@abc.com",
-    password: "1234",
-  },
-  {
-    email: "lucas@abc.com",
-    password: "1234coder",
-  },
-  {
-    email: "lobos@abc.com",
-    password: "1234",
-  },
-];
 
 export const LoginProvider = ({ children }) => {
-  const [user, setUser] = useState({
-    user: "",
-    logged: true,
-  });
 
   const login = (values) => {
-    const match = users.find((user) => user.email === values.email);
+    signInWithEmailAndPassword(auth,values.email,values.pass)
+   .then((userValidation) =>{
+    const user = userValidation.user;
+    setUser({
+      user: user.email,
+      logged: true
+    })
+   }).catch((e) => {
+    console.log(e.message)
+   }) 
+  }
 
-    if (match) {
-      if (match.password === values.pass) {
-        setUser({
-          user: match.email,
-          logged: true,
-        });
-      } else alert("password incorrect");
-    } else alert("email incorrect");
-  };
+  const [user, setUser] = useState({
+   user: "",
+   logged: false,
+   
+ }); 
 
   const logout = () => {
     setUser({
       user: "",
       logged: false,
     });
-  };
+  }; 
   return (
-    <LoginContext.Provider value={{ user, login, logout }}>
+    <LoginContext.Provider value={{  user,  login , logout  }}>
       {children}
     </LoginContext.Provider>
   );
