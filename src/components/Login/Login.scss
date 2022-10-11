@@ -1,9 +1,43 @@
 
+
+.fullBody{
+    margin:0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    overflow: hidden;
+    &::before{
+        content: "";
+        width: 100%;
+        min-height: 100vh;
+        position: absolute;
+        top:0;
+        left:0;
+
+    background-image: linear-gradient(
+        45deg,
+         hsl(201deg 100% 83%) 0%,
+         hsl(200deg 64% 72%) 10%,
+         hsl(199deg 48% 62%) 20%,
+         hsl(198deg 39% 51%) 30%,
+         hsl(197deg 51% 40%) 40%,
+         hsl(193deg 98% 26%) 50%,
+         hsl(193deg 98% 25%) 60%,
+         hsl(193deg 98% 24%) 70%,
+         hsl(193deg 98% 23%) 80%,
+         hsl(193deg 98% 22%) 90%,
+         hsl(193deg 98% 21%) 100%
+);
+        opacity: 0.9;
+        z-index: -1;
+    }
     .mainDivLogin{
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 100px;
+        margin-top: 50px;
 
         .title{
             color:teal;
@@ -14,13 +48,13 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            margin-top: 50px;
 
             .inputsLogin{
                 font-family: Georgia, 'Times New Roman', Times, serif;
                 font-size: 30px;
-                margin: 10px;
-
-                
+                margin: 12px;
+                color:rgb(5, 5, 5)       
             }
             
              .buttonLogin{
@@ -42,5 +76,4 @@
             cursor:pointer
         }
     }
-
-    
+}    
