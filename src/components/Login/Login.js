@@ -31,6 +31,8 @@ const Login = () => {
 
   return (
     <div className="mainDivLogin">
+
+      <h1 className="title">THE NORTH WATCH</h1>
       <form onSubmit={handleSubmit} className="formLogin">
         <Input
           className="inputsLogin"
