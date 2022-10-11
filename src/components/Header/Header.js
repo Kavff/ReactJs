@@ -31,7 +31,8 @@ const Header = () => {
             <Typography variant="h3" component="div" sx={{ flexGrow: 1 }}>
               <div className="imgDiv">
                 <Link to="/">
-                  <img
+                  <img 
+                  className="imgLogo"
                     width={"550px"}
                     height={"80px"}
                     src={Logo}

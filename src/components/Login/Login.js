@@ -1,4 +1,4 @@
-import { Button, Input } from "@mui/material";
+import { Button, Container, Input } from "@mui/material";
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { LoginContext } from "../../context/LoginContext";
@@ -23,14 +23,16 @@ const Login = () => {
     login({
       email,
       pass,
-    });
+    })
   };
 
   return (
 
     <div className="fullBody">
-      <div className="mainDivLogin">
-        <img width={"1200px"} height={"210px"} src={Logo} alt="logo"></img>
+      <div className="mainDivLogin" >
+        <Container className="containerLogo" maxWidth="sm">
+        <img  className="imgLogo" src={Logo} alt="logo"></img>
+        </Container>
 
         <form onSubmit={handleSubmit} className="formLogin">
           <Input

@@ -38,10 +38,18 @@
         flex-direction: column;
         align-items: center;
         margin-top: 50px;
+        
+        .containerLogo{
 
-        .title{
-            color:teal;
-            font-size:5rem;
+            width: 75vw;
+            max-width: 1000px;
+            min-width: 320px;
+            margin: auto;
+
+            .imgLogo{
+                width: 100%;
+            }
+            
         }
         .formLogin{
             
