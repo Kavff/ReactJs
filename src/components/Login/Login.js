@@ -4,18 +4,20 @@ import { Link } from "react-router-dom";
 import { LoginContext } from "../../context/LoginContext";
 import "./Login.scss";
 
-const Login = () => {
-  const { login } = useContext(LoginContext);
 
+
+const Login = () => {
+
+  const { login } = useContext(LoginContext);
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
 
   const handleEmailChange = (e) => {
-    setEmail(e.target.value);
+      setEmail(e.target.value);
   };
 
   const handlePassChange = (e) => {
-    setPass(e.target.value);
+      setPass(e.target.value);
   };
   const handleSubmit = (e) => {
     e.preventDefault();

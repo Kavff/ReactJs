@@ -4,10 +4,20 @@ import { Link } from "react-router-dom";
 import './Register.scss'
 import { createUserWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '../../firebase/config'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Register = () => {
 
+  const notify = (text) => toast(text, { autoClose: 3000 });
+  const delay = ms => new Promise(res => setTimeout(res, ms));
+  
+  const goBack = async () => {
+      await delay(4000);
+      window.location.replace("/");
+  }
+  
   const [registerEmail,setRegisterEmail] = useState("");
   const [registerPassword,setRegisterPassword] = useState("");
   const [registerNumber,setRegisterNumber] = useState("");
@@ -20,9 +30,13 @@ const Register = () => {
   const registerUser = async () => {
     try{
       const user = await createUserWithEmailAndPassword(auth, registerEmail,registerPassword,registerNumber)
-      alert("user register",user)
+      notify(`Successful registration`)
+      console.log(user)
+      goBack()
+
     }catch (e){
       console.log(e.message)
+      notify(`incorrect email`)
     }
   }
 
@@ -67,6 +81,7 @@ const Register = () => {
           </Link>
         </div>
       </form>
+      <ToastContainer />
     </div>
   );
 };
